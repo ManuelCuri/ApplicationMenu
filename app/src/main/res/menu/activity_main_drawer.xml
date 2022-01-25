@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Categorias">
+            <menu>
+                <item
+                    android:id="@+id/cerdoFragment"
+                    android:icon="@drawable/pig_icon_app"
+                    android:title="Cerdo" />
+                <item
+                    android:id="@+id/vegetalesFragment"
+                    android:icon="@drawable/salad_icon_app"
+                    android:title="Vegetales" />
+                <item
+                    android:id="@+id/pescado"
+                    android:icon="@drawable/fish_icon_app"
+                    android:title="Pescado" />
+                <item
+                    android:id="@+id/postresFragment"
+                    android:icon="@drawable/postre_icon_app"
+                    android:title="Postres" />
+            </menu>
+        </item>
+    </group>
+</menu>
