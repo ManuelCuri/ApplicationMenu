@@ -1,6 +1,8 @@
 package com.example.applicationmenu.Recycler;
 
-public class ProductoVo {
+import java.io.Serializable;
+
+public class ProductoVo implements Serializable {
 
     private String nombre;
     private String info;

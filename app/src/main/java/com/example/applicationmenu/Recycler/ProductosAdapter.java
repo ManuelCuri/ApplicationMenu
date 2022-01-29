@@ -1,5 +1,6 @@
 package com.example.applicationmenu.Recycler;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,10 +37,20 @@ public class ProductosAdapter extends RecyclerView.Adapter<ProductosAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolderProductos holder, int position) {
-        holder.etiNombre.setText(listaProductos.get(position).getNombre());
-        holder.etiInformacion.setText(listaProductos.get(position).getInfo());
-        holder.etiPrecio.setText(listaProductos.get(position).getPrecio());
-        holder.foto.setImageResource(listaProductos.get(position).getFoto());
+        final ProductoVo item = listaProductos.get(position);
+        holder.etiNombre.setText(item.getNombre());
+        holder.etiInformacion.setText(item.getInfo());
+        holder.etiPrecio.setText(item.getPrecio());
+        holder.foto.setImageResource(item.getFoto());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
+                intent.putExtra("itemDetail", item);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
